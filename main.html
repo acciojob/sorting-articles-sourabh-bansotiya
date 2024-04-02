@@ -1,56 +1,31 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorted Articles</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="audio.css">
 </head>
 <body>
-  <h1>Sorted Articles</h1>
-  <ul id="band"></ul>
+    <ul id="band">
+        <li>The Plot in You</li>
+        <li>The Devil Wears Prada</li>
+        <li>Pierce the Veil</li>
+        <li>Norma Jean</li>
+        <li>The Bled</li>
+        <li>Say Anything</li>
+        <li>The Midway State</li>
+        <li>We Came as Romans</li>
+        <li>Counterparts</li>
+        <li>Oh, Sleeper</li>
+        <li>A Skylit Drive</li>
+        <li>Anywhere But Here</li>
+        <li>An Old Dog</li>
+    </ul>
+    <script type="text/javascript" src="./script.js">
+        
 
-  <script>
-    // Data for the articles
-    const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
-
-    // Function to sort the articles while excluding certain words
-    function sortArticles(bands) {
-      // Define an array to store the sorted bands
-      let sortedBands = [];
-
-      // Regular expression to match "a", "an", and "the" with word boundary
-      const excludeWordsRegex = /\b(?:a|an|the)\b/i;
-
-      // Sort the bands while ignoring certain words
-      sortedBands = bands.sort((a, b) => {
-        // Remove the excluded words and leading/trailing whitespaces, and convert to lowercase for comparison
-        const bandA = a.replace(excludeWordsRegex, '').trim().toLowerCase();
-        const bandB = b.replace(excludeWordsRegex, '').trim().toLowerCase();
-
-        // Compare the modified band names
-        if (bandA < bandB) {
-          return -1;
-        } else if (bandA > bandB) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-
-      return sortedBands;
-    }
-
-    // Get the ul element to append sorted articles
-    const bandList = document.getElementById('band');
-
-    // Sort the articles and update the HTML
-    const sortedBands = sortArticles(bands);
-    sortedBands.forEach(band => {
-      const listItem = document.createElement('li');
-      listItem.textContent = band;
-      bandList.appendChild(listItem);
-    });
-  </script>
+    </script>
 </body>
 </html>
-
